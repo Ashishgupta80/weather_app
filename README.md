@@ -12,12 +12,12 @@ Note :
 How to use the site:
 
 1. You can directly enter any city and get its current weather and weather for five consecutive days.
-2. You can select location on the map and get the weather and forecast aswell.
-3. Use the current location button and allow location access to get the current and forecast weather of your location.
-4. Last 5 cities searches will be in the history dropdown.
+2. Use the current location button and allow location access to get the current and forecast weather of your location.
+3. Last 5 cities searches will be in the history dropdown.
 
 Other details:
-1)live project link:https://weather-app-rust-alpha-48.vercel.app/ 2) Github repo link :https://github.com/Raj2902/weather_app
+1)live project link:https://weather-app-five-eta-41.vercel.app/ 
+2) Github repo link :https://github.com/Ashishgupta80/weather_app
 
 Project setup
 

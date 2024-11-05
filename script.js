@@ -1,5 +1,5 @@
 //this is my api key from open weather map api i am putting it here so that i dont have to write it again and again
-const API_KEY = "b279a0e85e73dea536bee47fb8e9b6ce";
+const API_KEY = "ac911d96022eb18be47fefa01c92138e";
 
 //this is the function that will be called when we will be submitting our form
 function submitForm(event) {

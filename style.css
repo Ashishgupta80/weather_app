@@ -6,7 +6,7 @@ body {
   background: azure;
 }
 .main {
-  background: aquamarine;
+  background: rgb(127, 150, 255);
   width: -webkit-fill-available;
 }
 h1 {
