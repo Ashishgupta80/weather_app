@@ -1,0 +1,83 @@
+/* @tailwind base; */
+
+/* @tailwind components; */
+
+.m-2 {
+  margin: 0.5rem
+}
+
+.mt-2 {
+  margin-top: 0.5rem
+}
+
+.block {
+  display: block
+}
+
+.flex {
+  display: flex
+}
+
+.table {
+  display: table
+}
+
+.flex-row {
+  flex-direction: row
+}
+
+.flex-col {
+  flex-direction: column
+}
+
+.flex-wrap {
+  flex-wrap: wrap
+}
+
+.items-center {
+  align-items: center
+}
+
+.justify-center {
+  justify-content: center
+}
+
+.justify-between {
+  justify-content: space-between
+}
+
+.bg-gray-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity))
+}
+
+.bg-indigo-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(99 102 241 / var(--tw-bg-opacity))
+}
+
+.bg-indigo-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(67 56 202 / var(--tw-bg-opacity))
+}
+
+.p-2 {
+  padding: 0.5rem
+}
+
+.p-5 {
+  padding: 1.25rem
+}
+
+.text-center {
+  text-align: center
+}
+
+.font-serif {
+  font-family: Arial, sans-serif
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity))
+}

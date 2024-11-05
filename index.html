@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--adding important meta tags-->
+    <meta
+      name="description"
+      content="Get accurate real-time weather updates for cities from all over the world. Check current weather conditions, 
+      forecasts, and more on our weather app."
+    />
+    <meta
+      name="keywords"
+      content="weather, forecast, cities, temperature, humidity, rainfall,wind"
+    />
+    <meta name="author" content="Raj Agarwal" />
+    <title>Weather Forecast | Weather App</title>
+    <!--adding the icon for the weather application-->
+    <link rel="icon" href="images/weather-forecast.png" />
+    <link rel="stylesheet" href="style.css" />
+    <!--adding tailwind css sheet-->
+    <link href="output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <!--Added links to open street map.-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+  </head>
+  <body class="flex flex-col justify-center items-center font-serif">
+    <p id="loading" class="loading text-center">Loading...</p>
+    <section class="main">
+      <h1 class="text-center bg-indigo-700 p-2 bg-indigo-500 text-white">
+        Weather Dashboard
+      </h1>
+      <div class="data-sec">
+        <div class="left-side flex text-center justify-center">
+          <!-- note : the dropdown from the droplist is not the dropdown from the recently selected city so need to click on submit or
+            either press enter. -->
+          <form
+            class="flex flex-col p-5"
+            action="#"
+            onsubmit="submitForm(event)"
+          >
+            <label class="block" for="name">Enter a City Name</label>
+            <input
+              name="name"
+              placeholder="E.g, New York, London, Tokyo"
+              id="name"
+              type="text"
+              list="cities"
+              class="block"
+              required
+            />
+            <datalist id="cities">
+              <!--the options for the cities will be coming dynamically through api and will be appended here using js-->
+            </datalist>
+            <span class="history_dropdown"
+              >History&nbsp;
+              <i
+                class="fa-solid fa-caret-down"
+                onclick="toggle_history(event)"
+              ></i
+            ></span>
+            <fieldset class="search_history p-2">
+              <ul>
+                No search history found.
+              </ul>
+            </fieldset>
+            <input
+              type="submit"
+              value="Search"
+              class="block bg-indigo-500 text-white"
+            />
+            <fieldset>
+              <legend class="text-center">or</legend>
+              <button
+                class="mt-2 bg-gray-600 text-white"
+                type="button"
+                onclick="getLocation()"
+              >
+                Use Current Location
+              </button>
+              <!--For displaying error in use current location-->
+              <span class="err_use_current_location"></span>
+            </fieldset>
+          </form>
+        </div>
+        <span class="errors"
+          >Possible Errors :Your input seems to be wrong, We don't cover this
+          city.</span
+        >
+        <div class="right-side">
+          <div
+            class="up-portion flex flex-row bg-indigo-500 p-5 text-white justify-between m-2"
+          >
+            <span class="first_time"
+              >No data to display. Select a city first.</span
+            >
+            <div class="up-left">
+              <div class="city_date flex flex-wrap">
+                <!--inside is a dummy data-->
+                <h2 class="city-name">London</h2>
+                <span class="date">(2024-4-23)</span>
+              </div>
+              <p>
+                <i class="fa-solid fa-temperature-three-quarters"></i>&nbsp;
+                Temperature : <span id="temp">7.06</span><span> &#8451;</span>
+              </p>
+              <p>
+                <i class="fa-solid fa-wind"></i>&nbsp;Wind :
+                <span id="wind">2.85</span><span> M/S</span>
+              </p>
+              <p>
+                <i class="fa-solid fa-droplet"></i>&nbsp;Humidity :
+                <span id="humidity">88</span><span> %</span>
+              </p>
+            </div>
+            <div class="up-right">
+              <img
+                id="weather-img"
+                src="https://openweathermap.org/img/wn/10d@2x.png"
+                alt="#"
+              />
+              <p id="temp-des" class="text-center">Light Rain</p>
+            </div>
+          </div>
+          <div class="down-portion">
+            <h3 class="m-2">5-Day Forecast</h3>
+            <span class="errors_forecast"
+              >No data to display. Select a city first.</span
+            >
+            <table class="p-2">
+              <tbody>
+                <tr>
+                  <!--this is the place where five weather forecast data will be shown
+                  dynamically by using append as of js-->
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!--continer for the map-->
+      <div id="map" style="width: 100%; height: 300px"></div>
+      <div id="coordinates"></div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>

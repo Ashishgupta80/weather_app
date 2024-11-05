@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: azure;
+}
+.main {
+  background: aquamarine;
+  width: -webkit-fill-available;
+}
+h1 {
+  font-size: large;
+}
+form {
+  gap: 10px;
+  width: -webkit-fill-available;
+}
+input,
+button {
+  width: -webkit-fill-available;
+  padding: 10px 5px;
+}
+label {
+  font-weight: 700;
+}
+fieldset {
+  border: none;
+  border-top: 1px solid grey;
+}
+button {
+  border: none;
+}
+h1,
+input[type="submit"] {
+  border: none;
+}
+.up-portion {
+  border-radius: 10px;
+}
+.up-left {
+  gap: 10px;
+  font-size: small;
+  line-height: 2;
+}
+.up-portion img {
+  width: 100px;
+}
+h2,
+.date {
+  font-size: x-large;
+  font-weight: 700;
+}
+.city_date {
+  gap: 5px;
+}
+td {
+  color: white;
+  background: #808080;
+  padding: 10px 20px 10px 10px;
+  line-height: 1.5;
+}
+tr {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+td {
+  width: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+td p {
+  place-self: start;
+}
+.loading {
+  display: none;
+}
+.up-left,
+.up-right {
+  display: none;
+}
+.errors {
+  display: none;
+}
+ul {
+  list-style: none;
+  text-align: start;
+}
+.search_history {
+  background-color: white;
+  display: none;
+  color: grey;
+}
+#history_head {
+  text-align: center;
+  color: black;
+  font-weight: 700;
+}
+input[type="submit"],
+button,
+.fa-solid {
+  cursor: pointer;
+}
+.searched_history_city {
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background-color: rgb(133 135 249);
+}
+button:hover {
+  background-color: rgb(116 126 140);
+}
+.searched_history_city:hover {
+  background: rgb(215, 215, 215);
+  color: black;
+}
+.down-portion {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/*I am not using tailwind for media queries because i dont want dig depp into using
+tailwind i have used tailwind only where it was feasible and not affecting my pre written css.
+*/
+
+@media (min-width: 425px) {
+  .up-left {
+    font-size: medium;
+  }
+}
+@media (min-width: 768px) {
+  body {
+    margin: 50px 20px;
+  }
+  td {
+    width: auto;
+  }
+  .data-sec {
+    display: flex;
+    gap: 20px;
+    margin: 30px;
+    flex-direction: column;
+  }
+  .up-portion img {
+    width: 200px;
+  }
+  .right-side {
+    flex: 2;
+  }
+  .left-side {
+    flex: 1.5;
+  }
+  label {
+    text-align: left;
+  }
+  h1 {
+    font-size: x-large;
+  }
+}
+@media (min-width: 1024px) {
+  .left-side {
+    flex: 1;
+  }
+  .data-sec {
+    flex-direction: row;
+  }
+}
